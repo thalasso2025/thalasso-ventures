@@ -4,67 +4,73 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Thalassa Ventures</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #1a1a1a;
-      --accent: #004d7a;
-      --bg: #fefefe;
-      --font: 'Segoe UI', sans-serif;
+      --deepblue: #0a2540;
+      --gold: #c9b037;
+      --ivory: #fefefe;
+      --text: #1a1a1a;
+      --font-main: 'Inter', sans-serif;
+      --font-logo: 'Playfair Display', serif;
     }
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      margin: 0; padding: 0; box-sizing: border-box;
     }
     body {
-      font-family: var(--font);
-      background: var(--bg);
-      color: var(--primary);
-      line-height: 1.6;
+      font-family: var(--font-main);
+      background: var(--ivory);
+      color: var(--text);
     }
     header {
-      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #ccc;
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid #ddd;
     }
     .logo {
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: var(--accent);
-      letter-spacing: 2px;
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 50px;
     }
     .lang-toggle {
-      cursor: pointer;
       font-weight: bold;
+      cursor: pointer;
       font-size: 0.9rem;
+      color: var(--deepblue);
     }
-    section.hero {
-      padding: 4rem 2rem;
+    .hero {
       text-align: center;
+      padding: 5rem 2rem 3rem;
     }
     .hero h1 {
-      font-size: 2.5rem;
+      font-size: 2.7rem;
+      font-family: var(--font-logo);
+      color: var(--deepblue);
       margin-bottom: 1rem;
     }
     .hero p {
-      max-width: 600px;
+      max-width: 700px;
       margin: 0 auto 2rem;
       font-size: 1.2rem;
+      color: #333;
     }
     .btn {
-      background: var(--accent);
+      background: var(--gold);
       color: white;
       border: none;
-      padding: 0.8rem 1.5rem;
+      padding: 0.9rem 1.8rem;
       font-size: 1rem;
+      font-weight: bold;
       cursor: pointer;
-      border-radius: 5px;
+      border-radius: 30px;
     }
-    section.form-section {
+    .form-section {
+      background: #f8f8f8;
       padding: 3rem 2rem;
-      background: #f5f5f5;
     }
     form {
       max-width: 500px;
@@ -74,55 +80,51 @@
       gap: 1rem;
     }
     input[type="text"], input[type="email"] {
-      padding: 0.7rem;
-      font-size: 1rem;
-      border: 1px solid #ccc;
+      padding: 0.8rem;
       border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
     }
-    section.login {
-      padding: 3rem 2rem;
+    .login {
       text-align: center;
+      padding: 2rem;
     }
     footer {
-      padding: 2rem;
       text-align: center;
       font-size: 0.9rem;
-      color: #666;
-      border-top: 1px solid #ccc;
+      color: #777;
+      padding: 2rem;
+      border-top: 1px solid #ddd;
     }
-    [data-lang] {
-      display: none;
-    }
-    [data-lang].active {
-      display: block;
-    }
+    [data-lang] { display: none; }
+    [data-lang].active { display: block; }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">Thalassa Ventures</div>
+    <div class="logo">
+      <img src="logo.svg" alt="Thalassa Ventures Logo">
+    </div>
     <div class="lang-toggle" onclick="toggleLang()">DE | EN</div>
   </header>
 
   <section class="hero">
     <div data-lang="de" class="active">
-      <h1>Privates Offshore Investment</h1>
-      <p>Krypto-freundlich. Diskret. Extrem profitabel.<br />
-        Bis zu 80–90 % Jahresrendite mit legalen Offshore-Strukturen.</p>
+      <h1>Private Offshore Investment</h1>
+      <p>Exklusiv. Krypto-freundlich. Extrem profitabel.<br> Bis zu 80–90 % Jahresrendite mit diskreten Offshore-Strukturen.</p>
       <button class="btn">Vertrauliches Erstgespräch anfordern</button>
     </div>
     <div data-lang="en">
       <h1>Private Offshore Investment</h1>
-      <p>Crypto-friendly. Confidential. Exceptionally profitable.<br />
-        Up to 80–90% annual returns via legal offshore structures.</p>
+      <p>Exclusive. Crypto-friendly. Exceptionally profitable.<br> Up to 80–90% annual returns with discreet offshore structures.</p>
       <button class="btn">Request Confidential Consultation</button>
     </div>
   </section>
 
   <section class="form-section">
     <form>
-      <input type="text" placeholder="Voller Name / Full Name" required />
-      <input type="email" placeholder="E-Mail" required />
+      <input type="text" placeholder="Voller Name / Full Name" required>
+      <input type="email" placeholder="E-Mail" required>
       <button class="btn" type="submit">Absenden / Submit</button>
     </form>
   </section>
