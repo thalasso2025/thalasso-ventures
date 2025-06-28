@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thalassa Ventures</title>
+  <style>
+    :root {
+      --primary: #1a1a1a;
+      --accent: #004d7a;
+      --bg: #fefefe;
+      --font: 'Segoe UI', sans-serif;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--primary);
+      line-height: 1.6;
+    }
+    header {
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: var(--accent);
+      letter-spacing: 2px;
+    }
+    .lang-toggle {
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+    section.hero {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      font-size: 1.2rem;
+    }
+    .btn {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    section.form-section {
+      padding: 3rem 2rem;
+      background: #f5f5f5;
+    }
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    input[type="text"], input[type="email"] {
+      padding: 0.7rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    section.login {
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    footer {
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+      border-top: 1px solid #ccc;
+    }
+    [data-lang] {
+      display: none;
+    }
+    [data-lang].active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Thalassa Ventures</div>
+    <div class="lang-toggle" onclick="toggleLang()">DE | EN</div>
+  </header>
+
+  <section class="hero">
+    <div data-lang="de" class="active">
+      <h1>Privates Offshore Investment</h1>
+      <p>Krypto-freundlich. Diskret. Extrem profitabel.<br />
+        Bis zu 80–90 % Jahresrendite mit legalen Offshore-Strukturen.</p>
+      <button class="btn">Vertrauliches Erstgespräch anfordern</button>
+    </div>
+    <div data-lang="en">
+      <h1>Private Offshore Investment</h1>
+      <p>Crypto-friendly. Confidential. Exceptionally profitable.<br />
+        Up to 80–90% annual returns via legal offshore structures.</p>
+      <button class="btn">Request Confidential Consultation</button>
+    </div>
+  </section>
+
+  <section class="form-section">
+    <form>
+      <input type="text" placeholder="Voller Name / Full Name" required />
+      <input type="email" placeholder="E-Mail" required />
+      <button class="btn" type="submit">Absenden / Submit</button>
+    </form>
+  </section>
+
+  <section class="login">
+    <div data-lang="de" class="active">
+      <p>Sie haben bereits ein Konto? <a href="#">Login</a></p>
+    </div>
+    <div data-lang="en">
+      <p>Already have an account? <a href="#">Login</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Thalassa Ventures Ltd. – George Town, Grand Cayman, Cayman Islands</p>
+  </footer>
+
+  <script>
+    let currentLang = 'de';
+    function toggleLang() {
+      currentLang = currentLang === 'de' ? 'en' : 'de';
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        el.classList.remove('active');
+        if (el.getAttribute('data-lang') === currentLang) {
+          el.classList.add('active');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
